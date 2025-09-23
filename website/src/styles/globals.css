@@ -13,28 +13,75 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+/* Canvas for particles */
+.particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh; 
   position: relative;
+  gap: 2rem;
+  z-index: 2;
 }
 
-h1 {
+/* Name container */
+.name-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+.name-text {
   font-family: 'Inter', sans-serif; 
   color: #e5e5e5; 
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 300;
+  letter-spacing: .05em;
+  opacity: 0;
+  animation: nameAppear 0.5s ease-out forwards;
+  animation-delay: 3.5s;
+}
+
+@keyframes nameAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Subtitle typing animation */
+.subtitle-container {
+  margin-top: 1rem;
+}
+
+.subtitle-text {
+  font-family: 'Inter', sans-serif; 
+  color: #999; 
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 300;
   overflow: hidden; 
   border-right: .1em solid #666; 
   white-space: nowrap; 
-  margin: 0 auto;
   letter-spacing: .05em; 
   width: 0;
   animation:
-    typing 4s steps(15, end) forwards, 
-    blink-caret .75s step-end infinite 4s; 
+    typing 3s steps(18, end) forwards, 
+    blink-caret .75s step-end infinite 3s; 
 }
 
 @keyframes typing {
@@ -59,8 +106,12 @@ h1 {
 
 /* Responsive design */
 @media (max-width: 768px) {
-  h1 {
+  .name-text {
     font-size: clamp(2rem, 8vw, 3rem);
     letter-spacing: .03em;
+  }
+  
+  .subtitle-text {
+    font-size: clamp(1rem, 4vw, 1.5rem);
   }
 }
