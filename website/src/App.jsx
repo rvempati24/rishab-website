@@ -13,19 +13,29 @@ function App() {
     const newParticles = []
     const cw = window.innerWidth
     const ch = window.innerHeight
-    const cx = cw / 2
-    const cy = ch / 2
-    // Confined scatter region centered on screen
-    const scatterW = Math.min(600, Math.floor(cw * 0.5))
-    const scatterH = Math.min(300, Math.floor(ch * 0.4))
+    let minX = cw * 0.25
+    let maxX = cw * 0.75
+    let minY = ch * 0.3
+    let maxY = ch * 0.6
+
+    // If text targets are available, confine to that rectangle (with small margin)
+    const t = targetsRef.current
+    if (t && t.length > 0) {
+      minX = Math.min(...t.map(p => p.x))
+      maxX = Math.max(...t.map(p => p.x))
+      minY = Math.min(...t.map(p => p.y))
+      maxY = Math.max(...t.map(p => p.y))
+      const mx = 20; const my = 20
+      minX -= mx; maxX += mx; minY -= my; maxY += my
+    }
 
     for (let i = 0; i < count; i++) {
-      const rx = (Math.random() - 0.5) * scatterW
-      const ry = (Math.random() - 0.5) * scatterH
+      const x = minX + Math.random() * (maxX - minX)
+      const y = minY + Math.random() * (maxY - minY)
       newParticles.push({
         id: i,
-        x: cx + rx,
-        y: cy + ry,
+        x,
+        y,
         targetX: 0,
         targetY: 0,
         vx: 0,
@@ -72,24 +82,19 @@ function App() {
   }
 
   useEffect(() => {
-    generateParticles()
     const onResize = () => {
       if (!canvasRef.current) return
       const cw = window.innerWidth
       const ch = window.innerHeight
       targetsRef.current = getTextTargets('RISHAB VEMPATI', cw, ch)
+      // regenerate particles to stay within the new target rectangle
+      generateParticles()
     }
     onResize()
     window.addEventListener('resize', onResize)
 
-    // Show typing animation after delay+movement (~11.7s total)
-    const timer = setTimeout(() => {
-      setShowTyping(true)
-    }, 11700)
-
     return () => {
       window.removeEventListener('resize', onResize)
-      clearTimeout(timer)
     }
   }, [])
 
@@ -174,13 +179,23 @@ function App() {
 
   return (
     <>
+      <header className="site-header">
+        <nav className="nav">
+          <a href="#home" className="nav-brand">RV</a>
+          <div className="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </header>
       <canvas 
         ref={canvasRef} 
         className="particles-canvas"
         style={{ position: 'fixed', top: 0, left: 0, zIndex: 1 }}
       />
       
-      <div className="container">
+      <div id="home" className="container">
         <div className="name-container" aria-hidden="true" />
         
         {showTyping && (
@@ -189,6 +204,18 @@ function App() {
           </div>
         )}
       </div>
+
+      <main className="site-main">
+        <section id="about" className="section">
+          {/* content intentionally left blank */}
+        </section>
+        <section id="projects" className="section">
+          {/* content intentionally left blank */}
+        </section>
+        <section id="contact" className="section">
+          {/* content intentionally left blank */}
+        </section>
+      </main>
     </>
   )
 }
