@@ -7,31 +7,30 @@ function App() {
   const canvasRef = useRef(null)
   const animationRef = useRef(null)
   const targetsRef = useRef([])
+  const heroRef = useRef(null)
 
   // Generate random particles
   const generateParticles = (count = 3000) => {
     const newParticles = []
-    const cw = window.innerWidth
-    const ch = window.innerHeight
-    let minX = cw * 0.25
-    let maxX = cw * 0.75
-    let minY = ch * 0.3
-    let maxY = ch * 0.6
-
-    // If text targets are available, confine to that rectangle (with small margin)
-    const t = targetsRef.current
-    if (t && t.length > 0) {
-      minX = Math.min(...t.map(p => p.x))
-      maxX = Math.max(...t.map(p => p.x))
-      minY = Math.min(...t.map(p => p.y))
-      maxY = Math.max(...t.map(p => p.y))
-      const mx = 20; const my = 20
-      minX -= mx; maxX += mx; minY -= my; maxY += my
-    }
+    const container = heroRef.current
+    const cw = container ? container.clientWidth : window.innerWidth
+    const ch = container ? container.clientHeight : window.innerHeight
+    const minX = 0
+    const maxX = cw
+    const minY = 0
+    const maxY = ch
 
     for (let i = 0; i < count; i++) {
-      const x = minX + Math.random() * (maxX - minX)
-      const y = minY + Math.random() * (maxY - minY)
+      // Scatter across full hero area with light clustering for natural look
+      const clusterX = minX + Math.random() * (maxX - minX)
+      const clusterY = minY + Math.random() * (maxY - minY)
+      const spread = 60
+      let x = clusterX + (Math.random() - 0.5) * spread
+      let y = clusterY + (Math.random() - 0.5) * spread
+      // clamp inside bounds
+      x = Math.max(minX, Math.min(maxX, x))
+      y = Math.max(minY, Math.min(maxY, y))
+      
       newParticles.push({
         id: i,
         x,
@@ -40,8 +39,8 @@ function App() {
         targetY: 0,
         vx: 0,
         vy: 0,
-        size: Math.random() * 1.5 + 0.6,
-        opacity: Math.random() * 0.6 + 0.3
+        size: Math.random() * 1.2 + 0.8,
+        opacity: Math.random() * 0.4 + 0.4
       })
     }
     setParticles(newParticles)
@@ -83,14 +82,15 @@ function App() {
 
   useEffect(() => {
     const onResize = () => {
-      if (!canvasRef.current) return
-      const cw = window.innerWidth
-      const ch = window.innerHeight
+      const container = heroRef.current
+      if (!container || !canvasRef.current) return
+      const cw = container.clientWidth
+      const ch = container.clientHeight
       targetsRef.current = getTextTargets('RISHAB VEMPATI', cw, ch)
-      // regenerate particles to stay within the new target rectangle
       generateParticles()
     }
-    onResize()
+    // initial setup after first paint
+    setTimeout(onResize, 0)
     window.addEventListener('resize', onResize)
 
     return () => {
@@ -104,9 +104,12 @@ function App() {
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
     
-    // Set canvas size
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
+    // Set canvas size to hero container
+    const container = heroRef.current
+    const cw = container ? container.clientWidth : window.innerWidth
+    const ch = container ? container.clientHeight : window.innerHeight
+    canvas.width = cw
+    canvas.height = ch
 
     // Prepare target positions from rasterized text
     const targetPositions = targetsRef.current
@@ -189,13 +192,13 @@ function App() {
           </div>
         </nav>
       </header>
-      <canvas 
-        ref={canvasRef} 
-        className="particles-canvas"
-        style={{ position: 'fixed', top: 0, left: 0, zIndex: 1 }}
-      />
       
-      <div id="home" className="container">
+      <div id="home" className="container" ref={heroRef}>
+        <canvas 
+          ref={canvasRef} 
+          className="particles-canvas"
+          style={{ position: 'absolute', inset: 0, zIndex: 1 }}
+        />
         <div className="name-container" aria-hidden="true" />
         
         {showTyping && (
@@ -207,13 +210,161 @@ function App() {
 
       <main className="site-main">
         <section id="about" className="section">
-          {/* content intentionally left blank */}
+          <div className="section-content">
+            <h2 className="section-title">About Me</h2>
+            <div className="about-grid">
+              <div className="about-text">
+                <p className="lead">I'm a passionate software developer with a love for creating elegant solutions to complex problems.</p>
+                <p>With expertise in modern web technologies and a keen eye for design, I specialize in building user-centric applications that combine functionality with aesthetic appeal.</p>
+                <div className="skills">
+                  <h3>Skills & Technologies</h3>
+                  <div className="skill-tags">
+                    <span className="skill-tag">JavaScript</span>
+                    <span className="skill-tag">React</span>
+                    <span className="skill-tag">Node.js</span>
+                    <span className="skill-tag">Python</span>
+                    <span className="skill-tag">TypeScript</span>
+                    <span className="skill-tag">CSS</span>
+                    <span className="skill-tag">Git</span>
+                    <span className="skill-tag">AWS</span>
+                  </div>
+                </div>
+              </div>
+              <div className="about-stats">
+                <div className="stat">
+                  <div className="stat-number">3+</div>
+                  <div className="stat-label">Years Experience</div>
+                </div>
+                <div className="stat">
+                  <div className="stat-number">50+</div>
+                  <div className="stat-label">Projects Completed</div>
+                </div>
+                <div className="stat">
+                  <div className="stat-number">100%</div>
+                  <div className="stat-label">Client Satisfaction</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
+
         <section id="projects" className="section">
-          {/* content intentionally left blank */}
+          <div className="section-content">
+            <h2 className="section-title">Featured Projects</h2>
+            <div className="projects-grid">
+              <div className="project-card">
+                <div className="project-image">
+                  <div className="project-placeholder">E-Commerce Platform</div>
+                </div>
+                <div className="project-content">
+                  <h3>Modern E-Commerce Platform</h3>
+                  <p>Full-stack e-commerce solution with React frontend, Node.js backend, and integrated payment processing.</p>
+                  <div className="project-tech">
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>MongoDB</span>
+                    <span>Stripe</span>
+                  </div>
+                  <div className="project-links">
+                    <a href="#" className="project-link">Live Demo</a>
+                    <a href="#" className="project-link">GitHub</a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="project-card">
+                <div className="project-image">
+                  <div className="project-placeholder">Task Management App</div>
+                </div>
+                <div className="project-content">
+                  <h3>Collaborative Task Manager</h3>
+                  <p>Real-time collaborative task management application with drag-and-drop functionality and team features.</p>
+                  <div className="project-tech">
+                    <span>Vue.js</span>
+                    <span>Socket.io</span>
+                    <span>PostgreSQL</span>
+                    <span>Redis</span>
+                  </div>
+                  <div className="project-links">
+                    <a href="#" className="project-link">Live Demo</a>
+                    <a href="#" className="project-link">GitHub</a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="project-card">
+                <div className="project-image">
+                  <div className="project-placeholder">Data Visualization</div>
+                </div>
+                <div className="project-content">
+                  <h3>Interactive Data Dashboard</h3>
+                  <p>Dynamic data visualization dashboard with real-time updates and customizable charts and graphs.</p>
+                  <div className="project-tech">
+                    <span>D3.js</span>
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>SQLite</span>
+                  </div>
+                  <div className="project-links">
+                    <a href="#" className="project-link">Live Demo</a>
+                    <a href="#" className="project-link">GitHub</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
+
         <section id="contact" className="section">
-          {/* content intentionally left blank */}
+          <div className="section-content">
+            <h2 className="section-title">Get In Touch</h2>
+            <div className="contact-grid">
+              <div className="contact-info">
+                <h3>Let's work together</h3>
+                <p>I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+                <div className="contact-methods">
+                  <div className="contact-method">
+                    <div className="contact-icon">📧</div>
+                    <div>
+                      <div className="contact-label">Email</div>
+                      <div className="contact-value">rishab@example.com</div>
+                    </div>
+                  </div>
+                  <div className="contact-method">
+                    <div className="contact-icon">💼</div>
+                    <div>
+                      <div className="contact-label">LinkedIn</div>
+                      <div className="contact-value">linkedin.com/in/rishabvempati</div>
+                    </div>
+                  </div>
+                  <div className="contact-method">
+                    <div className="contact-icon">🐙</div>
+                    <div>
+                      <div className="contact-label">GitHub</div>
+                      <div className="contact-value">github.com/rishabvempati</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="contact-form">
+                <form>
+                  <div className="form-group">
+                    <label htmlFor="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
+                  </div>
+                  <button type="submit" className="submit-btn">Send Message</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
     </>
