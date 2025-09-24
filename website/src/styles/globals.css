@@ -189,13 +189,20 @@ body {
 .section {
   min-height: 100vh;
   padding: 6rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 600ms ease, transform 700ms ease;
 }
 
 .section-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+.section.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section-title {

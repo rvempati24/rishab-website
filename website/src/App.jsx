@@ -98,6 +98,33 @@ function App() {
     }
   }, [])
 
+  // Observe sections to fade them in/out on scroll
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll('.section'))
+    if (sections.length === 0) return
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const options = { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.15 }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target
+        if (entry.isIntersecting) {
+          el.classList.add('in-view')
+        } else {
+          // Toggle off to allow disappearing when out of view
+          el.classList.remove('in-view')
+        }
+      })
+    }, options)
+
+    sections.forEach((sec) => {
+      if (!prefersReduced) observer.observe(sec)
+      else sec.classList.add('in-view')
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
   useEffect(() => {
     if (particles.length === 0) return
 
