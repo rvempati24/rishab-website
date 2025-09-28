@@ -9,7 +9,6 @@ function App() {
   const targetsRef = useRef([])
   const heroRef = useRef(null)
 
-  // Generate random particles
   const generateParticles = (count = 3000) => {
     const newParticles = []
     const container = heroRef.current
@@ -21,13 +20,12 @@ function App() {
     const maxY = ch
 
     for (let i = 0; i < count; i++) {
-      // Scatter across full hero area with light clustering for natural look
       const clusterX = minX + Math.random() * (maxX - minX)
       const clusterY = minY + Math.random() * (maxY - minY)
       const spread = 60
       let x = clusterX + (Math.random() - 0.5) * spread
       let y = clusterY + (Math.random() - 0.5) * spread
-      // clamp inside bounds
+ 
       x = Math.max(minX, Math.min(maxX, x))
       y = Math.max(minY, Math.min(maxY, y))
       
@@ -46,7 +44,6 @@ function App() {
     setParticles(newParticles)
   }
 
-  // Rasterize text to points (targets) using an offscreen canvas
   const getTextTargets = (text, canvasWidth, canvasHeight) => {
     const off = document.createElement('canvas')
     const padding = 40
@@ -64,12 +61,12 @@ function App() {
     const y = Math.floor(off.height / 2)
     octx.fillText(text, x, y)
 
-    const gap = 5 // sampling gap; smaller = more points
+    const gap = 5 
     const img = octx.getImageData(0, 0, off.width, off.height).data
     const targets = []
     for (let yy = 0; yy < off.height; yy += gap) {
       for (let xx = 0; xx < off.width; xx += gap) {
-        const idx = (yy * off.width + xx) * 4 + 3 // alpha channel
+        const idx = (yy * off.width + xx) * 4 + 3 
         if (img[idx] > 128) {
           const worldX = (canvasWidth - off.width) / 2 + xx
           const worldY = (canvasHeight - off.height) / 2 - 50 + yy
@@ -89,7 +86,7 @@ function App() {
       targetsRef.current = getTextTargets('RISHAB VEMPATI', cw, ch)
       generateParticles()
     }
-    // initial setup after first paint
+
     setTimeout(onResize, 0)
     window.addEventListener('resize', onResize)
 
@@ -98,7 +95,7 @@ function App() {
     }
   }, [])
 
-  // Observe sections to fade them in/out on scroll
+
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll('.section'))
     if (sections.length === 0) return
@@ -130,58 +127,51 @@ function App() {
 
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
-    
-    // Set canvas size to hero container
+  
     const container = heroRef.current
     const cw = container ? container.clientWidth : window.innerWidth
     const ch = container ? container.clientHeight : window.innerHeight
     canvas.width = cw
     canvas.height = ch
-
-    // Prepare target positions from rasterized text
+t
     const targetPositions = targetsRef.current
 
     let animationTime = 0
-    const startDelay = 1500 // 1.5s to let user see scattered dots
-    const moveDuration = 10000 // 10s movement after delay
+    const startDelay = 500 // 0.5s
+    const moveDuration = 2000 // 2s 
     const totalAnimationTime = startDelay + moveDuration
-    const holdTime = 0 // no artificial pause
+    const holdTime = 0 
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       
-      animationTime += 16 // ~60fps
+      animationTime += 16
       const progress = Math.min(animationTime / totalAnimationTime, 1)
       
       particles.forEach((particle, index) => {
-        // Assign target positions by wrapping index across available targets
         if (targetPositions.length > 0) {
           const target = targetPositions[index % targetPositions.length]
           particle.targetX = target.x
           particle.targetY = target.y
         }
 
-        // Strict time-based interpolation with initial delay
         if (animationTime <= 16) {
-          // store start positions at first frame
           particle.sx = particle.x
           particle.sy = particle.y
         }
 
-        // During delay, keep particles still (show scattered state)
         if (animationTime < startDelay) {
           // no movement; just draw
         } else {
           // movement: map time into [0,1]
           const tRaw = (animationTime - startDelay) / moveDuration
           const t = Math.max(0, Math.min(1, tRaw))
-          // smoothstep easing for clarity
+          
           const eased = t * t * (3 - 2 * t)
           particle.x = particle.sx + (particle.targetX - particle.sx) * eased
           particle.y = particle.sy + (particle.targetY - particle.sy) * eased
         }
 
-        // Draw particle with consistent opacity
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
         const alpha = particle.opacity
@@ -193,7 +183,6 @@ function App() {
         animationRef.current = requestAnimationFrame(animate)
       } else {
         animationRef.current = null
-        // Start subtitle immediately when merge completes
         setShowTyping(true)
       }
     }
