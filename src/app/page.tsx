@@ -192,11 +192,95 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Experience Section */}
+      <section id="experience" className="py-24 bg-slate-900/30">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <SectionHeading
+            number="02"
+            title="Work Experience"
+            subtitle="My professional journey."
+          />
+          <div className="space-y-12">
+            {/* Ekai */}
+            <div className="relative border-l-2 border-slate-800 pl-8 ml-4 md:ml-0 space-y-2">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyan-500 box-content border-4 border-slate-950" />
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                <h3 className="text-xl font-bold text-slate-100">Ekai</h3>
+                <span className="font-mono text-sm text-cyan-400">Aug. 2025 – Present</span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-4">
+                <h4 className="text-lg text-slate-300">Software Engineering Intern</h4>
+                <span className="text-sm text-slate-500 font-mono">Remote</span>
+              </div>
+              <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
+                <li>Spearheaded the development of an &quot;AI Twin&quot; Enterprise Assistant for Microsoft Teams using Azure and Flask.</li>
+                <li>Optimized retrieval algorithms to reduce query response time to &lt;2s for 50+ concurrent users, while achieving 100% accuracy on numerical queries via SQL integration.</li>
+                <li>Architected a scalable RAG pipeline using Model Context Protocol (MCP), Microsoft Graph API, and Vector Databases to index and retrieve context from 10,000+ enterprise documents.</li>
+              </ul>
+            </div>
+
+            {/* AssetMark */}
+            <div className="relative border-l-2 border-slate-800 pl-8 ml-4 md:ml-0 space-y-2">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-700 box-content border-4 border-slate-950" />
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                <h3 className="text-xl font-bold text-slate-100">AssetMark</h3>
+                <span className="font-mono text-sm text-slate-500">Jun. 2025 – Aug. 2025</span>
+              </div>
+               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-4">
+                <h4 className="text-lg text-slate-300">Software Engineering Intern</h4>
+                <span className="text-sm text-slate-500 font-mono">San Francisco, CA</span>
+              </div>
+              <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
+                <li>Re-engineered the legacy Enterprise Communication Service using .NET, C#, and SQL to improve scalability.</li>
+                <li>Scaled system throughput by 300% to process 1M+ daily emails, implementing robust fault tolerance and automated retry policies that guaranteed 99.99% delivery reliability.</li>
+                <li>Orchestrated an asynchronous event-driven architecture utilizing Azure Service Bus, Dead Letter Queues, and Microservices to decouple dependencies and handle traffic spikes.</li>
+              </ul>
+            </div>
+
+             {/* Accelera Payments */}
+             <div className="relative border-l-2 border-slate-800 pl-8 ml-4 md:ml-0 space-y-2">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-700 box-content border-4 border-slate-950" />
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                <h3 className="text-xl font-bold text-slate-100">Accelera Payments</h3>
+                <span className="font-mono text-sm text-slate-500">May 2024 – Aug. 2024</span>
+              </div>
+               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-4">
+                <h4 className="text-lg text-slate-300">Software Engineering Intern</h4>
+                <span className="text-sm text-slate-500 font-mono">San Francisco, CA</span>
+              </div>
+              <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
+                <li>Engineered a high-frequency financial transaction engine processing $50M+ in daily volume using Kafka.</li>
+                <li>Optimized Kafka partitions to handle 50k+ daily ISO 20022 payments with sub-millisecond latency, ensuring zero data loss during critical outages via dead-letter mechanisms.</li>
+                <li>Deployed distributed microservices within CI/CD pipelines, reducing deployment time by 40% and enabling seamless rollbacks.</li>
+              </ul>
+            </div>
+
+            {/* Cisco */}
+            <div className="relative border-l-2 border-slate-800 pl-8 ml-4 md:ml-0 space-y-2">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-700 box-content border-4 border-slate-950" />
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                <h3 className="text-xl font-bold text-slate-100">Cisco Data Science Researcher</h3>
+                <span className="font-mono text-sm text-slate-500">Jan. 2024 – May 2024</span>
+              </div>
+               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-4">
+                <h4 className="text-lg text-slate-300">Undergraduate Researcher</h4>
+                 <span className="text-sm text-slate-500 font-mono">West Lafayette, IN</span>
+              </div>
+              <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
+                <li>Led demand forecasting initiatives, analyzing 10TB+ of supply chain data using Scikit-learn and Pandas.</li>
+                <li>Improved prediction accuracy by 18% for 10k+ SKUs and optimized ETL pipelines to process 5M+ historical records 60% faster than previous benchmarks.</li>
+                <li>Developed Bayesian Inference models to simulate complex supply chain scenarios, reducing stockout risks by 25%.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" className="py-24 bg-slate-900/30">
         <div className="container mx-auto px-6 max-w-6xl">
           <SectionHeading
-            number="02"
+            number="03"
             title="Featured Projects"
             subtitle="A selection of things I've built."
           />
@@ -259,7 +343,7 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-slate-950 text-center">
         <div className="container mx-auto px-6 max-w-2xl">
-          <SectionHeading number="03" title="Get In Touch" />
+          <SectionHeading number="04" title="Get In Touch" />
           <p className="text-slate-400 mb-8 text-lg">
             I&apos;m currently looking for new opportunities. Whether you have a
             question or just want to say hi, I&apos;ll try my best to get back
