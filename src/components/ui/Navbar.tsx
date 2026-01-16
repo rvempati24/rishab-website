@@ -1,13 +1,12 @@
 'use client';
 
-import { Terminal, Code2, User, Mail, FileText, Briefcase } from 'lucide-react';
+import { Terminal, Code2, User, Mail, Briefcase } from 'lucide-react';
 import Link from 'next/link';
 
 const navItems = [
   { name: 'About', href: '#about', icon: User },
   { name: 'Experience', href: '#experience', icon: Briefcase },
   { name: 'Projects', href: '#projects', icon: Code2 },
-  { name: 'Resume', href: '/resume.pdf', icon: FileText },
   { name: 'Contact', href: '#contact', icon: Mail },
 ];
 

@@ -2,7 +2,7 @@ import Navbar from "@/components/ui/Navbar";
 import Scene from "@/components/canvas/Scene";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ProjectCard from "@/components/ui/ProjectCard";
-import { ArrowRight, Mail, Linkedin, Github } from "lucide-react";
+import { ArrowRight, Mail, Linkedin, Github, FileText } from "lucide-react";
 
 export default function Home() {
   return (
@@ -29,14 +29,14 @@ export default function Home() {
           </p>
 
           <div className="flex gap-4 justify-center animate-fade-in-up delay-300">
-            <a
-              href="#projects"
+            <a 
+              href="/resume.pdf" 
               className="px-8 py-3 rounded-full bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 transition-all hover:scale-105 flex items-center gap-2"
             >
-              View Work <ArrowRight className="w-4 h-4" />
+              Resume <FileText className="w-4 h-4" />
             </a>
-            <a
-              href="#contact"
+            <a 
+              href="#contact" 
               className="px-8 py-3 rounded-full border border-slate-700 bg-slate-950/50 backdrop-blur-sm text-slate-200 hover:bg-slate-900 transition-all hover:border-slate-500"
             >
               Contact Me
