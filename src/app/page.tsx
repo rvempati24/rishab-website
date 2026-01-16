@@ -69,13 +69,31 @@ export default function Home() {
               </p>
               <div className="mt-8 space-y-6">
                 <h3 className="font-bold text-slate-200">Technical Skills</h3>
-                
+
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-cyan-400 font-mono text-sm mb-2">Languages</h4>
+                    <h4 className="text-cyan-400 font-mono text-sm mb-2">
+                      Languages
+                    </h4>
                     <div className="flex flex-wrap gap-2">
-                      {["Python", "Java", "C++", "C", "C#", "SQL", "JavaScript", "TypeScript", "Bash", "Shell", "R", "HTML/CSS"].map(skill => (
-                        <span key={skill} className="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default">
+                      {[
+                        "Python",
+                        "Java",
+                        "C++",
+                        "C",
+                        "C#",
+                        "SQL",
+                        "JavaScript",
+                        "TypeScript",
+                        "Bash",
+                        "Shell",
+                        "R",
+                        "HTML/CSS",
+                      ].map((skill) => (
+                        <span
+                          key={skill}
+                          className="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default"
+                        >
                           {skill}
                         </span>
                       ))}
@@ -83,10 +101,28 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <h4 className="text-cyan-400 font-mono text-sm mb-2">Frameworks</h4>
+                    <h4 className="text-cyan-400 font-mono text-sm mb-2">
+                      Frameworks
+                    </h4>
                     <div className="flex flex-wrap gap-2">
-                      {["FastAPI", "Flask", "React", "Next.js", "Node.js", ".NET", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "OpenCV", "Tailwind"].map(skill => (
-                        <span key={skill} className="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default">
+                      {[
+                        "FastAPI",
+                        "Flask",
+                        "React",
+                        "Next.js",
+                        "Node.js",
+                        ".NET",
+                        "PyTorch",
+                        "Scikit-learn",
+                        "Pandas",
+                        "NumPy",
+                        "OpenCV",
+                        "Tailwind",
+                      ].map((skill) => (
+                        <span
+                          key={skill}
+                          className="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default"
+                        >
                           {skill}
                         </span>
                       ))}
@@ -94,10 +130,27 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <h4 className="text-cyan-400 font-mono text-sm mb-2">Developer Tools</h4>
+                    <h4 className="text-cyan-400 font-mono text-sm mb-2">
+                      Developer Tools
+                    </h4>
                     <div className="flex flex-wrap gap-2">
-                      {["Docker", "Kubernetes", "Kafka", "Redis", "Git", "GitHub Actions", "Linux", "Azure", "AWS", "PostgreSQL", "MongoDB"].map(skill => (
-                        <span key={skill} className="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default">
+                      {[
+                        "Docker",
+                        "Kubernetes",
+                        "Kafka",
+                        "Redis",
+                        "Git",
+                        "GitHub Actions",
+                        "Linux",
+                        "Azure",
+                        "AWS",
+                        "PostgreSQL",
+                        "MongoDB",
+                      ].map((skill) => (
+                        <span
+                          key={skill}
+                          className="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default"
+                        >
                           {skill}
                         </span>
                       ))}
@@ -105,10 +158,18 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <h4 className="text-cyan-400 font-mono text-sm mb-2">Certifications</h4>
+                    <h4 className="text-cyan-400 font-mono text-sm mb-2">
+                      Certifications
+                    </h4>
                     <div className="flex flex-wrap gap-2">
-                      {["AWS Certified Cloud Practitioner", "Microsoft Azure Fundamentals (AZ-900)"].map(skill => (
-                         <span key={skill} className="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default">
+                      {[
+                        "AWS Certified Cloud Practitioner",
+                        "Microsoft Azure Fundamentals (AZ-900)",
+                      ].map((skill) => (
+                        <span
+                          key={skill}
+                          className="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default"
+                        >
                           {skill}
                         </span>
                       ))}
@@ -143,14 +204,53 @@ export default function Home() {
             <ProjectCard
               title="YourPingMe"
               description="A unified AI wrapper and scheduling engine that aggregates major LLM providers to execute complex prompts at user-defined intervals."
-              tags={["Python", "React", "Redis", "Celery", "LLM APIs"]}
+              tags={["Python", "PostgreSQL", "Redis", "Celery", "LLM APIs"]}
               links={{ github: "https://github.com/rvempati24" }}
             />
             <ProjectCard
               title="Parking Lot Detection"
               description="Led the development of a U-Net segmentation model for satellite imagery that automated data ingestion for over 50GB of mapping data."
-              tags={["Python", "PyTorch", "OpenCV", "Docker"]}
-              links={{ github: "https://github.com/rvempat/TDM_111-OSM-Project" }}
+              tags={[
+                "Python",
+                "Flask",
+                "PyTorch",
+                "OpenCV",
+                "Rest APIs",
+                "Docker",
+              ]}
+              links={{
+                github: "https://github.com/rvempat/TDM_111-OSM-Project",
+              }}
+            />
+            <ProjectCard
+              title="Finnie AI Card Game"
+              description="A modern web-based 4-player card game with teammate mechanics and real-time turn-based gameplay. Features AI Practice Bot."
+              tags={[
+                "React",
+                "WebSockets",
+                "TensorFlow",
+                "Pandas",
+                "Game Logic",
+              ]}
+              links={{ github: "https://github.com/rvempati24/finnie-ai" }}
+            />
+            <ProjectCard
+              title="Crux"
+              description="A Chrome Extension that automatically adjusts YouTube playback speed based on content density analysis using AI to optimize viewing efficiency."
+              tags={["FastAPI", "Gemini API", "HTML/CSS", "Manifest V3"]}
+              links={{ github: "https://github.com/rvempati24/Crux" }}
+            />
+            <ProjectCard
+              title="Personal Portfolio"
+              description="A high-performance portfolio website featuring 3D interactive elements, responsive design, and modern animations to showcase professional work."
+              tags={[
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "Three.js",
+                "React",
+              ]}
+              links={{ github: "https://github.com/rvempati24/rishab-website" }}
             />
           </div>
         </div>
