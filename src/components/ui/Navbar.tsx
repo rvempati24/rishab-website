@@ -15,7 +15,7 @@ export default function Navbar() {
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
       <div className="flex items-center gap-1 p-2 rounded-full border border-slate-800 bg-slate-950/80 backdrop-blur-md shadow-lg shadow-slate-900/50">
         <Link 
-          href="/" 
+          href="#home" 
           className="p-3 rounded-full hover:bg-slate-800 transition-colors group"
           aria-label="Home"
         >

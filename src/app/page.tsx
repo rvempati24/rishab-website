@@ -3,6 +3,7 @@ import Scene from "@/components/canvas/Scene";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ProjectCard from "@/components/ui/ProjectCard";
 import { ArrowRight, Mail, Linkedin, Github, FileText } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* 3D Background */}
         <div className="absolute inset-0 w-full h-full">
           <Scene />
@@ -181,10 +182,13 @@ export default function Home() {
             <div className="md:col-span-2">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                <div className="relative aspect-square rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center">
-                  <span className="text-slate-600 font-mono">
-                    Image Placeholder
-                  </span>
+                <div className="relative aspect-square rounded-lg bg-slate-900 border border-slate-800 overflow-hidden">
+                  <Image
+                    src="/profile.jpg"
+                    alt="Rishab Vempati"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
               </div>
             </div>
