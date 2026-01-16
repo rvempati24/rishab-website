@@ -130,7 +130,7 @@ export default function Home() {
             I&apos;ll try my best to get back to you!
           </p>
           <a 
-            href="mailto:rvempati@example.com" 
+            href="mailto:rishabvempati.2004@gmail.com" 
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 font-mono"
           >
             <Mail className="w-5 h-5" /> Say Hello
