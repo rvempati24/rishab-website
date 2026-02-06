@@ -365,7 +365,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ProjectCard
               title="YourPingMe"
-              description="A unified AI wrapper and scheduling engine that aggregates major LLM providers to execute complex prompts at user-defined intervals."
+              description="A scheduling engine that aggregates major LLM providers to execute complex prompts at user-defined intervals."
               tags={["Python", "PostgreSQL", "Redis", "Celery", "LLM APIs"]}
               links={{ github: "https://github.com/rvempati24" }}
             />
