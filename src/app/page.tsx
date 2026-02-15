@@ -225,19 +225,20 @@ export default function Home() {
               </div>
               <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
                 <li>
-                  Spearheaded the development of an &quot;AI Twin&quot;
-                  Enterprise Assistant for Microsoft Teams using Azure and
-                  Flask.
+                  Built Microsoft Teams integration for enterprise AI assistant,
+                  adapting existing Slack implementation to support Teams-specific
+                  features including automated task execution and knowledge base
+                  querying.
                 </li>
                 <li>
-                  Optimized retrieval algorithms to reduce query response time
-                  to &lt;2s for 50+ concurrent users, while achieving 100%
-                  accuracy on numerical queries via SQL integration.
+                  Integrated Microsoft Graph API with RAG pipeline to enable
+                  document retrieval across 10,000+ files using Pinecone vector
+                  database, achieving 92% retrieval accuracy.
                 </li>
                 <li>
-                  Architected a scalable RAG pipeline using Model Context
-                  Protocol (MCP), Microsoft Graph API, and Vector Databases to
-                  index and retrieve context from 10,000+ enterprise documents.
+                  Optimized semantic search with hybrid SQL retrieval and caching
+                  layer, reducing P95 response latency from 8.2s to 1.8s for 50+
+                  concurrent users.
                 </li>
               </ul>
             </div>
@@ -261,19 +262,22 @@ export default function Home() {
               </div>
               <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
                 <li>
-                  Re-engineered the legacy Enterprise Communication Service
-                  using .NET, C#, and SQL to improve scalability.
+                  Designed and implemented migration of legacy Enterprise
+                  Communication Service from monolithic .NET/C# to event-driven
+                  microservices using Azure Service Bus, processing 1M+ emails
+                  quarterly with 99.7% delivery success rate.
                 </li>
                 <li>
-                  Scaled system throughput by 300% to process 1M+ daily emails,
-                  implementing robust fault tolerance and automated retry
-                  policies that guaranteed 99.99% delivery reliability.
+                  Designed fault-tolerant message handling with dead-letter queues
+                  and exponential backoff retry policies, reducing message
+                  failure rate from 0.8% to 0.12% (85% reduction) and
+                  eliminating manual intervention for errors.
                 </li>
                 <li>
-                  Orchestrated an asynchronous event-driven architecture
-                  utilizing Azure Service Bus, Dead Letter Queues, and
-                  Microservices to decouple dependencies and handle traffic
-                  spikes.
+                  Decoupled 5 service dependencies into independently deployable
+                  microservices with API gateways, enabling horizontal
+                  autoscaling that handled traffic spikes during quarter-end
+                  reporting periods.
                 </li>
               </ul>
             </div>
@@ -299,18 +303,20 @@ export default function Home() {
               </div>
               <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
                 <li>
-                  Engineered a high-frequency financial transaction engine
-                  processing $50M+ in daily volume using Kafka.
+                  Implemented Kafka streaming pipeline for ISO 20022 payment
+                  processing with partition-based load balancing and exactly-once
+                  delivery semantics, load-tested to 50K+ daily transactions.
                 </li>
                 <li>
-                  Optimized Kafka partitions to handle 50k+ daily ISO 20022
-                  payments with sub-millisecond latency, ensuring zero data loss
-                  during critical outages via dead-letter mechanisms.
+                  Containerized 4 microservices using Docker with multi-stage
+                  builds in GitLab CI/CD pipelines, reducing deployment time
+                  from 2 hours to 25 minutes and enabling zero-downtime
+                  blue-green releases.
                 </li>
                 <li>
-                  Deployed distributed microservices within CI/CD pipelines,
-                  reducing deployment time by 40% and enabling seamless
-                  rollbacks.
+                  Built integration test suite and Grafana dashboards monitoring
+                  message throughput (avg 850 msg/sec), processing latency
+                  (P99: 120ms), and error rates across distributed system.
                 </li>
               </ul>
             </div>
@@ -320,7 +326,7 @@ export default function Home() {
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-700 box-content border-4 border-slate-950" />
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
                 <h3 className="text-xl font-bold text-slate-100">
-                  Cisco Data Science Researcher
+                  Cisco (via Purdue Data Mine)
                 </h3>
                 <span className="font-mono text-sm text-slate-500">
                   Jan. 2024 – May 2024
@@ -328,7 +334,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-4">
                 <h4 className="text-lg text-slate-300">
-                  Undergraduate Researcher
+                  Undergraduate Researcher – Data Science
                 </h4>
                 <span className="text-sm text-slate-500 font-mono">
                   West Lafayette, IN
@@ -336,17 +342,16 @@ export default function Home() {
               </div>
               <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
                 <li>
-                  Led demand forecasting initiatives, analyzing 10TB+ of supply
-                  chain data using Scikit-learn and Pandas.
+                  Constructed demand forecasting models using ensemble methods
+                  (Random Forest, XGBoost) with feature engineering on 2M+
+                  records, improving MAPE by 18% over baseline ARIMA models
+                  across 10,000 product SKUs.
                 </li>
                 <li>
-                  Improved prediction accuracy by 18% for 10k+ SKUs and
-                  optimized ETL pipelines to process 5M+ historical records 60%
-                  faster than previous benchmarks.
-                </li>
-                <li>
-                  Developed Bayesian Inference models to simulate complex supply
-                  chain scenarios, reducing stockout risks by 25%.
+                  Optimized ETL pipeline using Apache Spark for distributed
+                  processing of supply chain datasets, implementing incremental
+                  loading that reduced execution time from 45 minutes to 18
+                  minutes.
                 </li>
               </ul>
             </div>
