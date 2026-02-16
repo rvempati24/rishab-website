@@ -2,7 +2,7 @@
 
 A modern, high-performance personal portfolio website built with Next.js and Three.js, showcasing my work as a Computer Science & Artificial Intelligence student at Purdue University.
 
-## 🚀 Features
+## Features
 
 *   **Interactive 3D Background:** Immersive 3D scene powered by `react-three-fiber` and `drei`.
 *   **Modern Design:** Clean, responsive UI built with Tailwind CSS v4.
@@ -10,7 +10,7 @@ A modern, high-performance personal portfolio website built with Next.js and Thr
 *   **Dynamic Content:** Showcase for research interests, projects, and work experience.
 *   **Type Safety:** Fully typed codebase with TypeScript.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 *   **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
 *   **Language:** [TypeScript](https://www.typescriptlang.org/)
@@ -19,7 +19,7 @@ A modern, high-performance personal portfolio website built with Next.js and Thr
 *   **Icons:** [Lucide React](https://lucide.dev/)
 *   **Deployment:** Vercel (recommended)
 
-## 🏃‍♂️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -47,7 +47,7 @@ A modern, high-performance personal portfolio website built with Next.js and Thr
 
 4.  Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📦 Build & Deploy
+## Build & Deploy
 
 To create a production build:
 
@@ -57,7 +57,7 @@ npm run build
 
 This project is optimized for deployment on Vercel. Simply import your Git repository into Vercel, and it will handle the build settings automatically.
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
