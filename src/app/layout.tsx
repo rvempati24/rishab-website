@@ -15,8 +15,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rishab Vempati | Software Engineer",
-  description: "Portfolio of Rishab Vempati, a software engineer passionate about building high-quality applications.",
+  title: "Rishab Vempati | CS & AI",
+  description:
+    "Portfolio of Rishab Vempati, a CS & AI student at Purdue University.",
 };
 
 export default function RootLayout({

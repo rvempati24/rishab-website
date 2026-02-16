@@ -29,7 +29,7 @@ export default function Home() {
             Rishab Vempati
           </h1>
           <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200">
-            Passionate Software Engineer.
+            CS & AI Student at Purdue University.
           </p>
 
           <div className="flex gap-4 justify-center animate-fade-in-up delay-300">
@@ -68,8 +68,7 @@ export default function Home() {
               <p>
                 I have industry experience building production systems and am
                 currently seeking research opportunities to deepen my expertise
-                in ML. My background spans architecting enterprise RAG pipelines
-                to engineering high-frequency financial engines.
+                in ML.
               </p>
 
               <div className="py-2">
@@ -425,9 +424,9 @@ export default function Home() {
         <div className="container mx-auto px-6 max-w-2xl">
           <SectionHeading number="04" title="Get In Touch" />
           <p className="text-slate-400 mb-8 text-lg">
-            I&apos;m currently looking for new opportunities. Whether you have a
-            question or just want to say hi, I&apos;ll try my best to get back
-            to you!
+            I&apos;m currently seeking research opportunities in ML/AI and am
+            open to connecting about graduate school, research collaborations,
+            or industry roles.
           </p>
           <a
             href="mailto:rishabvempati.2004@gmail.com"
