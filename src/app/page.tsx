@@ -90,9 +90,9 @@ export default function Home() {
                         "JavaScript",
                         "TypeScript",
                         "Bash",
-                        "Shell",
                         "R",
                         "HTML/CSS",
+                        "Assembly",
                       ].map((skill) => (
                         <span
                           key={skill}
@@ -106,7 +106,7 @@ export default function Home() {
 
                   <div>
                     <h4 className="text-cyan-400 font-mono text-sm mb-2">
-                      Frameworks
+                      Frameworks & Libraries
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {[
@@ -117,10 +117,14 @@ export default function Home() {
                         "Node.js",
                         ".NET",
                         "PyTorch",
+                        "TensorFlow",
+                        "JAX",
+                        "OpenCV",
+                        "LangChain",
+                        "LangGraph",
                         "Scikit-learn",
                         "Pandas",
                         "NumPy",
-                        "OpenCV",
                         "Tailwind",
                       ].map((skill) => (
                         <span
@@ -135,21 +139,25 @@ export default function Home() {
 
                   <div>
                     <h4 className="text-cyan-400 font-mono text-sm mb-2">
-                      Developer Tools
+                      Tools & Technologies
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {[
                         "Docker",
                         "Kubernetes",
-                        "Kafka",
+                        "Apache Kafka",
                         "Redis",
                         "Git",
                         "GitHub Actions",
+                        "GitLab CI/CD",
                         "Linux",
                         "Azure",
-                        "AWS",
+                        "AWS (EC2, S3, Lambda)",
                         "PostgreSQL",
                         "MongoDB",
+                        "Pinecone",
+                        "Elasticsearch",
+                        "Apache Spark",
                       ].map((skill) => (
                         <span
                           key={skill}
