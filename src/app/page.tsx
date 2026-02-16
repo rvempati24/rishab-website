@@ -61,20 +61,61 @@ export default function Home() {
           <div className="grid md:grid-cols-5 gap-12">
             <div className="md:col-span-3 text-slate-400 leading-relaxed space-y-4">
               <p>
-                I am a Computer Science & Artificial Intelligence student at
-                Purdue University.
+                I&apos;m a Computer Science & Artificial Intelligence student at
+                Purdue University interested in machine learning research, with
+                a focus on information retrieval and applied ML.
               </p>
               <p>
-                With a strong foundation in cloud computing and full-stack
-                development, I specialize in building scalable, AI-driven
-                applications and optimizing high-frequency systems. My
-                experience ranges from architecting enterprise RAG pipelines to
-                engineering financial transaction engines.
+                I have industry experience building production systems and am
+                currently seeking research opportunities to deepen my expertise
+                in ML. My background spans architecting enterprise RAG pipelines
+                to engineering high-frequency financial engines.
               </p>
+
+              <div className="py-2">
+                <h3 className="font-bold text-slate-200 mb-2">
+                  Research Interests
+                </h3>
+                <p className="text-sm">
+                  Information Retrieval, RAG Systems, Applied Machine Learning,
+                  Computer Vision, Efficient Transformers.
+                </p>
+              </div>
+
               <div className="mt-8 space-y-6">
                 <h3 className="font-bold text-slate-200">Technical Skills</h3>
 
                 <div className="space-y-4">
+                  <div>
+                    <h4 className="text-cyan-400 font-mono text-sm mb-2">
+                      AI & Machine Learning
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        "PyTorch",
+                        "TensorFlow",
+                        "JAX",
+                        "LangChain",
+                        "LangGraph",
+                        "OpenCV",
+                        "Scikit-learn",
+                        "Pandas",
+                        "NumPy",
+                        "Pinecone",
+                        "Elasticsearch",
+                        "Apache Spark",
+                        "MCP",
+                      ].map((skill) => (
+                        <span
+                          key={skill}
+                          className="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
                   <div>
                     <h4 className="text-cyan-400 font-mono text-sm mb-2">
                       Languages
@@ -106,7 +147,7 @@ export default function Home() {
 
                   <div>
                     <h4 className="text-cyan-400 font-mono text-sm mb-2">
-                      Frameworks & Libraries
+                      Frameworks & Tools
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {[
@@ -116,67 +157,16 @@ export default function Home() {
                         "Next.js",
                         "Node.js",
                         ".NET",
-                        "PyTorch",
-                        "TensorFlow",
-                        "JAX",
-                        "OpenCV",
-                        "LangChain",
-                        "LangGraph",
-                        "Scikit-learn",
-                        "Pandas",
-                        "NumPy",
                         "Tailwind",
-                      ].map((skill) => (
-                        <span
-                          key={skill}
-                          className="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-cyan-400 font-mono text-sm mb-2">
-                      Tools & Technologies
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {[
                         "Docker",
                         "Kubernetes",
                         "Apache Kafka",
                         "Redis",
                         "Git",
-                        "GitHub Actions",
-                        "GitLab CI/CD",
-                        "Linux",
+                        "AWS",
                         "Azure",
-                        "AWS (EC2, S3, Lambda)",
                         "PostgreSQL",
                         "MongoDB",
-                        "Pinecone",
-                        "Elasticsearch",
-                        "Apache Spark",
-                      ].map((skill) => (
-                        <span
-                          key={skill}
-                          className="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-cyan-400 font-mono text-sm mb-2">
-                      Certifications
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {[
-                        "AWS Certified Cloud Practitioner",
-                        "Microsoft Azure Fundamentals (AZ-900)",
                       ].map((skill) => (
                         <span
                           key={skill}
@@ -377,54 +367,54 @@ export default function Home() {
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ProjectCard
-              title="YourPingMe"
-              description="A scheduling engine that aggregates major LLM providers to execute complex prompts at user-defined intervals."
-              tags={["Python", "PostgreSQL", "Redis", "Celery", "LLM APIs"]}
-              links={{ github: "https://github.com/rvempati24" }}
+              title="Ekai Enterprise RAG"
+              description="Architected a retrieval pipeline for 10k+ documents. Achieved 92% retrieval accuracy and reduced P95 latency from 8.2s to 1.8s via hybrid SQL/Vector search."
+              tags={[
+                "Python",
+                "LangChain",
+                "Pinecone",
+                "PostgreSQL",
+                "Azure OpenAI",
+                "Microsoft Graph",
+              ]}
+              links={{}}
             />
             <ProjectCard
               title="Parking Lot Detection"
-              description="Led the development of a U-Net segmentation model for satellite imagery that automated data ingestion for over 50GB of mapping data."
+              description="Led development of a U-Net segmentation model for satellite imagery. Automating data ingestion for 50GB+ mapping data with 84% IoU."
               tags={[
-                "Python",
-                "Flask",
                 "PyTorch",
+                "Computer Vision",
                 "OpenCV",
-                "Rest APIs",
                 "Docker",
+                "AWS EC2",
               ]}
               links={{
                 github: "https://github.com/rvempat/TDM_111-OSM-Project",
               }}
             />
             <ProjectCard
-              title="Finnie AI Card Game"
-              description="A modern web-based 4-player card game with teammate mechanics and real-time turn-based gameplay. Features AI Practice Bot."
-              tags={[
-                "React",
-                "WebSockets",
-                "TensorFlow",
-                "Pandas",
-                "Game Logic",
-              ]}
-              links={{ github: "https://github.com/rvempati24/finnie-ai" }}
+              title="YourPingMe"
+              description="A scheduling engine aggregating major LLM providers to execute complex prompts. Built for high reliability with Celery/Redis queues."
+              tags={["Python", "PostgreSQL", "Redis", "Celery", "LLM APIs"]}
+              links={{ github: "https://github.com/rvempati24" }}
             />
             <ProjectCard
               title="Crux"
-              description="A Chrome Extension that automatically adjusts YouTube playback speed based on content density analysis using AI to optimize viewing efficiency."
-              tags={["FastAPI", "Gemini API", "HTML/CSS", "Manifest V3"]}
+              description="Chrome Extension optimizing video playback speed using AI-driven content density analysis. Built with Gemini API and Manifest V3."
+              tags={["FastAPI", "Gemini API", "JavaScript", "Manifest V3"]}
               links={{ github: "https://github.com/rvempati24/Crux" }}
             />
             <ProjectCard
+              title="Finnie AI Card Game"
+              description="Multiplayer card game with an AI Practice Bot. Implemented using WebSocket for real-time state synchronization."
+              tags={["React", "TensorFlow.js", "WebSockets", "Node.js"]}
+              links={{ github: "https://github.com/rvempati24/finnie-ai" }}
+            />
+            <ProjectCard
               title="Personal Portfolio"
-              description="A high-performance portfolio website featuring 3D interactive elements, responsive design, and modern animations to showcase professional work."
-              tags={[
-                "Next.js",
-                "TypeScript",
-                "Tailwind CSS",
-                "Three.js",
-                "React",
-              ]}
+              description="3D interactive portfolio showcasing professional work. Built with modern web technologies for high performance."
+              tags={["Next.js", "TypeScript", "Three.js", "Tailwind CSS"]}
               links={{ github: "https://github.com/rvempati24/rishab-website" }}
             />
           </div>
