@@ -224,9 +224,9 @@ export default function Home() {
               <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
                 <li>
                   Built Microsoft Teams integration for enterprise AI assistant,
-                  adapting existing Slack implementation to support Teams-specific
-                  features including automated task execution and knowledge base
-                  querying.
+                  adapting existing Slack implementation to support
+                  Teams-specific features including automated task execution and
+                  knowledge base querying.
                 </li>
                 <li>
                   Integrated Microsoft Graph API with RAG pipeline to enable
@@ -234,9 +234,9 @@ export default function Home() {
                   database, achieving 92% retrieval accuracy.
                 </li>
                 <li>
-                  Optimized semantic search with hybrid SQL retrieval and caching
-                  layer, reducing P95 response latency from 8.2s to 1.8s for 50+
-                  concurrent users.
+                  Optimized semantic search with hybrid SQL retrieval and
+                  caching layer, reducing P95 response latency from 8.2s to 1.8s
+                  for 50+ concurrent users.
                 </li>
               </ul>
             </div>
@@ -266,9 +266,9 @@ export default function Home() {
                   quarterly with 99.7% delivery success rate.
                 </li>
                 <li>
-                  Designed fault-tolerant message handling with dead-letter queues
-                  and exponential backoff retry policies, reducing message
-                  failure rate from 0.8% to 0.12% (85% reduction) and
+                  Designed fault-tolerant message handling with dead-letter
+                  queues and exponential backoff retry policies, reducing
+                  message failure rate from 0.8% to 0.12% (85% reduction) and
                   eliminating manual intervention for errors.
                 </li>
                 <li>
@@ -302,8 +302,9 @@ export default function Home() {
               <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
                 <li>
                   Implemented Kafka streaming pipeline for ISO 20022 payment
-                  processing with partition-based load balancing and exactly-once
-                  delivery semantics, load-tested to 50K+ daily transactions.
+                  processing with partition-based load balancing and
+                  exactly-once delivery semantics, load-tested to 50K+ daily
+                  transactions.
                 </li>
                 <li>
                   Containerized 4 microservices using Docker with multi-stage
@@ -313,8 +314,8 @@ export default function Home() {
                 </li>
                 <li>
                   Built integration test suite and Grafana dashboards monitoring
-                  message throughput (avg 850 msg/sec), processing latency
-                  (P99: 120ms), and error rates across distributed system.
+                  message throughput (avg 850 msg/sec), processing latency (P99:
+                  120ms), and error rates across distributed system.
                 </li>
               </ul>
             </div>
@@ -323,9 +324,7 @@ export default function Home() {
             <div className="relative border-l-2 border-slate-800 pl-8 ml-4 md:ml-0 space-y-2">
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-700 box-content border-4 border-slate-950" />
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
-                <h3 className="text-xl font-bold text-slate-100">
-                  Cisco (via Purdue Data Mine)
-                </h3>
+                <h3 className="text-xl font-bold text-slate-100">Cisco</h3>
                 <span className="font-mono text-sm text-slate-500">
                   Jan. 2024 – May 2024
                 </span>
