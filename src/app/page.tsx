@@ -75,9 +75,19 @@ export default function Home() {
                 <h3 className="font-bold text-slate-200 mb-2">
                   Research Interests
                 </h3>
-                <p className="text-sm">
+                <p className="text-sm text-slate-400">
                   Information Retrieval, RAG Systems, Applied Machine Learning,
                   Computer Vision, Efficient Transformers.
+                </p>
+              </div>
+
+              <div className="py-2">
+                <h3 className="font-bold text-slate-200 mb-2">Coursework</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Analysis of Algorithms, Data Structures, Operating Systems,
+                  Computer Architecture, Database Systems, Intro to AI,
+                  Probability & Statistics, Linear Algebra, Multivariable
+                  Calculus, Discrete Math, OOP.
                 </p>
               </div>
 
@@ -211,31 +221,31 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
                 <h3 className="text-xl font-bold text-slate-100">Ekai</h3>
                 <span className="font-mono text-sm text-cyan-400">
-                  Aug. 2025 – Present
+                  Aug. 2025 – Feb. 2026
                 </span>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-4">
                 <h4 className="text-lg text-slate-300">
-                  Software Engineering Intern
+                  Software Engineer - Part Time
                 </h4>
                 <span className="text-sm text-slate-500 font-mono">Remote</span>
               </div>
               <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
                 <li>
-                  Built Microsoft Teams integration for enterprise AI assistant,
-                  adapting existing Slack implementation to support
-                  Teams-specific features including automated task execution and
-                  knowledge base querying.
+                  Built a RAG pipeline using Pinecone to index and retrieve
+                  context from 10,000+ docs with 92% retrieval accuracy.
                 </li>
                 <li>
-                  Integrated Microsoft Graph API with RAG pipeline to enable
-                  document retrieval across 10,000+ files using Pinecone vector
-                  database, achieving 92% retrieval accuracy.
+                  Developed an AI assistant for Microsoft Teams with Flask,
+                  enabling natural language querying of knowledge bases.
                 </li>
                 <li>
-                  Optimized semantic search with hybrid SQL retrieval and
-                  caching layer, reducing P95 response latency from 8.2s to 1.8s
-                  for 50+ concurrent users.
+                  Deployed the retrieval system as an MCP Server, enabling
+                  interoperability across multiple AI agent clients.
+                </li>
+                <li>
+                  Integrated SQL retrieval and response caching, cutting P95
+                  latency from 8.2s to 1.8s for 50+ concurrent users.
                 </li>
               </ul>
             </div>
@@ -259,22 +269,20 @@ export default function Home() {
               </div>
               <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
                 <li>
-                  Designed and implemented migration of legacy Enterprise
-                  Communication Service from monolithic .NET/C# to event-driven
-                  microservices using Azure Service Bus, processing 1M+ emails
-                  quarterly with 99.7% delivery success rate.
+                  Migrated legacy .NET/C# communication service to event-driven
+                  microservices using Azure Service Bus.
                 </li>
                 <li>
-                  Designed fault-tolerant message handling with dead-letter
-                  queues and exponential backoff retry policies, reducing
-                  message failure rate from 0.8% to 0.12% (85% reduction) and
-                  eliminating manual intervention for errors.
+                  Implemented dead-letter queues and exponential backoff retry,
+                  reducing message failure rate from 0.8% to 0.12%.
                 </li>
                 <li>
                   Decoupled 5 service dependencies into independently deployable
-                  microservices with API gateways, enabling horizontal
-                  autoscaling that handled traffic spikes during quarter-end
-                  reporting periods.
+                  microservices with API gateways.
+                </li>
+                <li>
+                  Enabled autoscaling that handled 1M+ quarterly emails with
+                  99.7% delivery success rate during traffic spikes.
                 </li>
               </ul>
             </div>
@@ -301,20 +309,19 @@ export default function Home() {
               <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
                 <li>
                   Implemented Kafka streaming pipeline for ISO 20022 payment
-                  processing with partition-based load balancing and
-                  exactly-once delivery semantics, load-tested to 50K+ daily
-                  transactions.
+                  processing, load-tested to 50K+ daily transactions.
                 </li>
                 <li>
-                  Containerized 4 microservices using Docker with multi-stage
-                  builds in GitLab CI/CD pipelines, reducing deployment time
-                  from 2 hours to 25 minutes and enabling zero-downtime
-                  blue-green releases.
+                  Containerized 4 microservices with Docker multi-stage builds
+                  in GitLab CI/CD, cutting deploy time by 80%.
                 </li>
                 <li>
-                  Built integration test suite and Grafana dashboards monitoring
-                  message throughput (avg 850 msg/sec), processing latency (P99:
-                  120ms), and error rates across distributed system.
+                  Developed a comprehensive integration test suite to validate
+                  pipeline reliability and data integrity.
+                </li>
+                <li>
+                  Built Grafana dashboards to monitor system health, tracking
+                  850 msg/sec throughput and 120ms P99 latency.
                 </li>
               </ul>
             </div>
@@ -338,16 +345,16 @@ export default function Home() {
               </div>
               <ul className="list-disc ml-4 space-y-2 text-slate-400 marker:text-cyan-500/50">
                 <li>
-                  Constructed demand forecasting models using ensemble methods
-                  (Random Forest, XGBoost) with feature engineering on 2M+
-                  records, improving MAPE by 18% over baseline ARIMA models
-                  across 10,000 product SKUs.
+                  Built demand forecasting models with Random Forest and
+                  XGBoost, improving MAPE by 18% over ARIMA.
                 </li>
                 <li>
-                  Optimized ETL pipeline using Apache Spark for distributed
-                  processing of supply chain datasets, implementing incremental
-                  loading that reduced execution time from 45 minutes to 18
-                  minutes.
+                  Optimized ETL pipeline with Apache Spark for distributed
+                  processing, cutting runtime from 45 to 18 minutes.
+                </li>
+                <li>
+                  Developed Bayesian inference models to simulate supply chain
+                  disruption scenarios and quantify stockout risk.
                 </li>
               </ul>
             </div>
@@ -366,20 +373,20 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ProjectCard
               title="Ekai Enterprise RAG"
-              description="Architected a retrieval pipeline for 10k+ documents. Achieved 92% retrieval accuracy and reduced P95 latency from 8.2s to 1.8s via hybrid SQL/Vector search."
+              description="Built a RAG pipeline for 10k+ documents with 92% accuracy. Deployed as an MCP Server and reduced P95 latency to 1.8s."
               tags={[
                 "Python",
                 "LangChain",
                 "Pinecone",
                 "PostgreSQL",
-                "Azure OpenAI",
-                "Microsoft Graph",
+                "MCP Server",
+                "Flask",
               ]}
               links={{}}
             />
             <ProjectCard
               title="Parking Lot Detection"
-              description="Led development of a U-Net segmentation model for satellite imagery. Automating data ingestion for 50GB+ mapping data with 84% IoU."
+              description="Led a 5-person team building a U-Net segmentation model for satellite imagery, achieving 84% IoU accuracy."
               tags={[
                 "PyTorch",
                 "Computer Vision",
@@ -393,13 +400,13 @@ export default function Home() {
             />
             <ProjectCard
               title="YourPingMe"
-              description="A scheduling engine aggregating major LLM providers to execute complex prompts. Built for high reliability with Celery/Redis queues."
+              description="Unified API wrapper for LLMs with a scheduling engine. Built with Redis/Celery for recurring API calls and async notifications."
               tags={["Python", "PostgreSQL", "Redis", "Celery", "LLM APIs"]}
               links={{ github: "https://github.com/rvempati24" }}
             />
             <ProjectCard
               title="Crux"
-              description="Chrome Extension optimizing video playback speed using AI-driven content density analysis. Built with Gemini API and Manifest V3."
+              description="Chrome Extension using Gemini API to analyze video content density and auto-adjust playback speed via a FastAPI backend."
               tags={["FastAPI", "Gemini API", "JavaScript", "Manifest V3"]}
               links={{ github: "https://github.com/rvempati24/Crux" }}
             />
