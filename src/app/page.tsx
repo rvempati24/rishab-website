@@ -67,13 +67,15 @@ export default function Home() {
                 I&apos;m a Computer Science &amp; Artificial Intelligence
                 undergraduate at Purdue University. I research{" "}
                 <span className="text-foreground">computer-use agents</span> in
-                the CIDER Lab with Prof. Jason Wu — training vision-language
-                models to navigate and evaluate user interfaces.
+                the CIDER Lab with Prof. Jason Wu, specifically training
+                vision-language models to navigate and evaluate user interfaces.
               </p>
               <p className="text-muted leading-relaxed mb-6">
-                I&apos;m broadly interested in agentic systems, reinforcement
-                learning for LLMs, and information retrieval, and I&apos;m
-                seeking research opportunities to deepen that work.
+                More broadly, I&apos;m interested in machine learning beyond the
+                agent setting: how models are trained and post-trained,
+                reinforcement learning, and building the systems that make them
+                work in practice. I&apos;m always open to research
+                collaborations and new problems in these areas.
               </p>
 
               <div className="flex flex-wrap items-center gap-3 text-sm">
@@ -144,7 +146,7 @@ export default function Home() {
           <SectionHeading
             number="01"
             title="Research"
-            subtitle="Agentic systems, reinforcement learning for LLMs, and information retrieval."
+            subtitle="Agentic systems, Reinforcement Learning for VLMs, and Computer Vision"
           />
 
           <div className="space-y-10">
@@ -152,7 +154,7 @@ export default function Home() {
             <div className="space-y-3">
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
                 <h3 className="text-lg font-semibold text-foreground">
-                  uxCUA — Computer-Use Agents for UI Usability
+                  Computer-Use Agents for UI Usability
                 </h3>
                 <span className="text-sm text-muted">Feb 2026 – Aug 2026</span>
               </div>
@@ -196,7 +198,7 @@ export default function Home() {
                   href="/poster.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-2 py-0.5 rounded-md border border-border text-muted text-xs hover:text-foreground hover:border-foreground/30 transition-colors"
+                  className="px-2 py-0.5 rounded-md border border-accent/40 text-accent text-xs"
                 >
                   Poster
                 </a>
@@ -229,15 +231,15 @@ export default function Home() {
                   href="https://github.com/rvempat/TDM_111-OSM-Project"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-2 py-0.5 rounded-md border border-border text-muted text-xs hover:text-foreground hover:border-foreground/30 transition-colors"
+                  className="px-2 py-0.5 rounded-md border border-accent/40 text-accent text-xs"
                 >
                   Code
                 </a>
               </div>
               <ul className="list-disc ml-4 space-y-2 text-sm text-muted marker:text-border">
                 <li>
-                  Led a 5-person team building a U-Net segmentation model for
-                  satellite imagery, achieving 84% IoU accuracy.
+                  Developed a U-Net segmentation model for satellite imagery in
+                  a 5-person team, achieving an 84% IoU accuracy.
                 </li>
                 <li>
                   Built an automated pipeline ingesting 50GB+ of Bing Maps
@@ -294,15 +296,7 @@ export default function Home() {
                   Kirkeby.
                 </p>
                 <p className="text-sm text-muted">
-                  The Data Mine, Purdue University, 2024.{" "}
-                  <a
-                    href="/poster.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent hover:underline"
-                  >
-                    [poster]
-                  </a>
+                  The Data Mine, Purdue University, 2024.
                 </p>
               </div>
             </li>
