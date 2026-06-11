@@ -1,23 +1,26 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-mono);
-  
-  --color-slate-950: #020617;
-  --color-slate-900: #0f172a;
-  --color-slate-800: #1e293b;
-  --color-slate-200: #e2e8f0;
-  --color-cyan-500: #06b6d4;
-  --color-cyan-400: #22d3ee;
-  --color-cyan-200: #a5f3fc;
+/* Enable class-based dark mode (toggled on <html>) */
+@custom-variant dark (&:where(.dark, .dark *));
 
-  --animate-fade-in-up: fadeInUp 0.5s ease-out forwards;
-  
+/* Map semantic tokens to live CSS variables so they switch at runtime */
+@theme inline {
+  --font-sans: var(--font-inter);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --animate-fade-in-up: fadeInUp 0.6s ease-out forwards;
+
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(12px);
     }
     to {
       opacity: 1;
@@ -26,22 +29,39 @@
   }
 }
 
+/* Light theme (default) */
 :root {
-  --background: var(--color-slate-950);
-  --foreground: var(--color-slate-200);
+  --background: #ffffff;
+  --foreground: #18181b;
+  --muted: #71717a;
+  --card: #fafafa;
+  --border: #e4e4e7;
+  --accent: #2563eb;
+  --accent-foreground: #ffffff;
+}
+
+/* Dark theme */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --muted: #a1a1aa;
+  --card: #141414;
+  --border: #262626;
+  --accent: #60a5fa;
+  --accent-foreground: #0a0a0a;
+}
+
+html {
+  background-color: var(--background);
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-mono);
-}
-
-/* Custom Utilities for Staggered Animations */
+/* Staggered entrance helpers */
 .delay-100 {
   animation-delay: 100ms;
 }

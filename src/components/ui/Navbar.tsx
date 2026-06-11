@@ -1,42 +1,42 @@
 'use client';
 
-import { Terminal, Code2, User, Mail, Briefcase } from 'lucide-react';
 import Link from 'next/link';
+import ThemeToggle from './ThemeToggle';
 
 const navItems = [
-  { name: 'About', href: '#about', icon: User },
-  { name: 'Experience', href: '#experience', icon: Briefcase },
-  { name: 'Projects', href: '#projects', icon: Code2 },
-  { name: 'Contact', href: '#contact', icon: Mail },
+  { name: 'Research', href: '#research' },
+  { name: 'Publications', href: '#publications' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
-      <div className="flex items-center gap-1 p-2 rounded-full border border-slate-800 bg-slate-950/80 backdrop-blur-md shadow-lg shadow-slate-900/50">
-        <Link 
-          href="#home" 
-          className="p-3 rounded-full hover:bg-slate-800 transition-colors group"
+    <nav className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-2xl">
+      <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-full border border-border bg-background/70 backdrop-blur-md">
+        <Link
+          href="#home"
+          className="px-3 py-1.5 text-sm font-semibold tracking-tight text-foreground"
           aria-label="Home"
         >
-          <Terminal className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
+          RV
         </Link>
-        
-        <div className="w-px h-6 bg-slate-800 mx-1" />
 
-        <ul className="flex items-center gap-1">
+        <ul className="flex items-center gap-0.5">
           {navItems.map((item) => (
             <li key={item.name}>
               <Link
                 href={item.href}
-                className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:text-cyan-200 hover:bg-slate-800 transition-all duration-300"
+                className="px-2.5 sm:px-3 py-1.5 rounded-full text-sm text-muted hover:text-foreground hover:bg-card transition-colors"
               >
-                <item.icon className="w-4 h-4" />
                 <span className="hidden sm:inline">{item.name}</span>
+                <span className="sm:hidden">{item.name[0]}</span>
               </Link>
             </li>
           ))}
         </ul>
+
+        <ThemeToggle />
       </div>
     </nav>
   );

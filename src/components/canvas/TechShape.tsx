@@ -1,34 +1,35 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { MeshDistortMaterial, Sphere } from '@react-three/drei';
 import * as THREE from 'three';
+import { useTheme } from '@/components/theme/ThemeProvider';
 
 export default function TechShape() {
   const meshRef = useRef<THREE.Mesh>(null);
-  const [hovered, setHover] = useState(false);
+  const { theme } = useTheme();
+
+  // Quiet, monochrome wireframe — dark line on light, light line on dark.
+  const color = theme === 'dark' ? '#3f3f46' : '#d4d4d8';
 
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.2;
-      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.3;
-      
-      // Slight scale effect on hover
-      const scale = hovered ? 2.2 : 2;
-      meshRef.current.scale.lerp(new THREE.Vector3(scale, scale, scale), 0.1);
+      const t = state.clock.getElapsedTime();
+      meshRef.current.rotation.x = t * 0.05;
+      meshRef.current.rotation.y = t * 0.08;
     }
   });
 
   return (
-    <Sphere args={[1, 64, 64]} ref={meshRef} scale={2} onPointerOver={() => setHover(true)} onPointerOut={() => setHover(false)}>
+    <Sphere args={[1, 48, 48]} ref={meshRef} scale={2.2}>
       <MeshDistortMaterial
-        color={hovered ? "#22d3ee" : "#0f172a"}
+        color={color}
         attach="material"
-        distort={0.4}
-        speed={2}
-        roughness={0.2}
-        metalness={0.8}
+        distort={0.25}
+        speed={0.8}
+        roughness={1}
+        metalness={0}
         wireframe={true}
       />
     </Sphere>
