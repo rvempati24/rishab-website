@@ -167,8 +167,7 @@ export default function Home() {
               <ul className="list-disc ml-4 space-y-2 text-sm text-muted marker:text-border">
                 <li>
                   Training a computer-use agent for automated UI usability
-                  assessment via RL-based fine-tuning of vision-language models
-                  on 879 interactive websites with injected usability defects.
+                  assessment via RL-based fine-tuning of vision-language models.
                 </li>
                 <li>
                   Running large-scale agent rollout generation and evaluation on
