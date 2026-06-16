@@ -86,7 +86,9 @@ export default function Home() {
                   <FileText className="w-4 h-4" /> Resume
                 </a>
                 <a
-                  href="mailto:rishabvempati.2004@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=rishabvempati.2004@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-border text-foreground hover:bg-card transition-colors"
                 >
                   <Mail className="w-4 h-4" /> Email
@@ -347,7 +349,9 @@ export default function Home() {
             school, or interesting problems in agentic AI.
           </p>
           <a
-            href="mailto:rishabvempati.2004@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=rishabvempati.2004@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
           >
             <Mail className="w-4 h-4" /> Say Hello
