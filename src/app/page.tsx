@@ -1,6 +1,7 @@
 import Navbar from "@/components/ui/Navbar";
 import Scene from "@/components/canvas/Scene";
 import SectionHeading from "@/components/ui/SectionHeading";
+import { GOLF_URL } from "@/config";
 import { Mail, Linkedin, Github, FileText } from "lucide-react";
 import Image from "next/image";
 
@@ -139,6 +140,21 @@ export default function Home() {
               ))}
             </ul>
           </div>
+
+          {/* Off the clock — subtle aside */}
+          <p className="mt-8 text-sm text-muted">
+            Off the clock, I&apos;m usually on a golf course — I track my game
+            with a{" "}
+            <a
+              href={GOLF_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground/80 underline decoration-border underline-offset-2 transition-colors hover:decoration-foreground"
+            >
+              handicap tracker I built
+            </a>
+            .
+          </p>
         </div>
       </section>
 
