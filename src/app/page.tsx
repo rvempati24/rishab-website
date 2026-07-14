@@ -12,7 +12,7 @@ const news = [
   },
   {
     date: "Feb 2026",
-    text: "Started research in the CIDER Lab with Prof. Jason Wu; submitted uxCUA to UIST 2026.",
+    text: "Started research in the CIDER Lab with Prof. Jason Wu; released uxCUA as an arXiv preprint.",
   },
 ];
 
@@ -180,9 +180,14 @@ export default function Home() {
                 <span className="text-muted">
                   CIDER Lab, Purdue · Advised by Prof. Jason Wu
                 </span>
-                <span className="px-2 py-0.5 rounded-md border border-accent/40 text-accent text-xs">
-                  Under review · ACM UIST 2026
-                </span>
+                <a
+                  href="https://arxiv.org/abs/2604.26020"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-2 py-0.5 rounded-md border border-accent/40 text-accent text-xs"
+                >
+                  arXiv
+                </a>
               </div>
               <ul className="list-disc ml-4 space-y-2 text-sm text-muted marker:text-border">
                 <li>
@@ -294,7 +299,16 @@ export default function Home() {
                   Wu.
                 </p>
                 <p className="text-sm text-muted">
-                  Under review at ACM UIST 2026.
+                  arXiv preprint{" "}
+                  <a
+                    href="https://arxiv.org/abs/2604.26020"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:underline"
+                  >
+                    arXiv:2604.26020
+                  </a>
+                  .
                 </p>
               </div>
             </li>
